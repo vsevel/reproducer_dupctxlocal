@@ -1,0 +1,26 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+
+makeCallPOST(1);
+makeCallPOST(2);
+
+
+
+function makeCallPOST(i) {
+console.log("start call " + i);
+$.post({
+  url: "http://localhost:8090/hello/post",
+  headers: {"Authorization": "Basic foo"},
+  success: function (result) {
+    console.log("end call " + i);
+  }
+});
+}
+
+</script>
+</body>
+</html>
